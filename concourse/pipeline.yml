@@ -28,7 +28,6 @@ jobs:
     params:
       github_token: ((github_token))
       heroku_api_key: ((heroku_api_key))
-      statuscake_api_key: ((statuscake_api_key))
       command: apply
       directories: |
           terraform
@@ -43,7 +42,7 @@ resources:
 - name: monitoring-app
   type: git
   source:
-      uri: git@github.com:PGR301-2018/exam-app.git
+      uri: git@github.com:PGR301-2018/gradle-app.git
       branch: master
       private_key: ((deploy_key_app))
 
@@ -51,6 +50,6 @@ resources:
 - name: monitoring-infra
   type: git
   source:
-      uri: git@github.com:PGR301-2018/exam-infra.git
+      uri: git@github.com:PGR301-2018/gradle-infra.git
       branch: master
       private_key: ((deploy_key_infra))
